@@ -563,6 +563,7 @@ static void rcu_exp_wait_wake(unsigned long s)
 	 */
 	mutex_lock(&rcu_state->exp_wake_mutex);
 	rcu_exp_gp_seq_end(rsp);
+
 	trace_rcu_exp_grace_period(rcu_state.name, s, TPS("end"));
 
 	rcu_for_each_node_breadth_first(rnp) {
